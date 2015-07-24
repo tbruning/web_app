@@ -47,8 +47,10 @@ At this point the linear model is worthless, and in the case of the soldier stan
 
 This model was taken from _How Not To Be Wrong: The Power of Mathamatical Thinking_ by Jordan Ellenberg.
 
---- 
+---   
+
 ### The Code
 
 ```{r, show_code, ref.label= "the_code" }
 ```
+This code, and all the code for this project is available on [github](https://github.com/tbruning/web_app).
