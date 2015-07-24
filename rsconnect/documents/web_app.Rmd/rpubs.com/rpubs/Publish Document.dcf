@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+bundleId:
+        https://api.rpubs.com/api/v1/document/94708/c6e0092863bf434094dad0fd72ca7631
+url: http://rpubs.com/tgbrun/94708
+when: 1437775488.10958

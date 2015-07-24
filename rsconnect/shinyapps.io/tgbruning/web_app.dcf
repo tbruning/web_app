@@ -1,0 +1,8 @@
+name: web_app
+account: tgbruning
+server: shinyapps.io
+bundleId: 225404
+url: https://tgbruning.shinyapps.io/web_app
+when: 1437761929.30554
+asMultiple: FALSE
+asStatic: FALSE

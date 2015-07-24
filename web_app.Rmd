@@ -1,0 +1,54 @@
+---
+title: "How Linear Models Can Kill You"
+author: "Tom Bruning"
+date: "July 24, 2015"
+output: ioslides_presentation
+---
+
+## The Problem
+
+Whenever you look at linear models it is important to try to understand the underlying event behavior, not just the visible manifestation from time _0_ to _now_. 
+
+The problem I have modeled is the trajectory of a missle from launch to the number of seconds that have elapsed since launch.  The only information available to the linear model is what has occurred, and that is incomplete information.
+
+The following slides numerically show the behavior of the model.  The graphical model is available  [here](https://tgbruning.shinyapps.io/web_app).
+
+## The Model
+
+The formula used to compute the trajetory is:   
+Height(_i_) =  100 ft + (200 ft * _i_)  - (5 * _i_^2), where _i_ = seconds since launch.
+
+```{r,the_code, echo = FALSE, message= FALSE, warning=FALSE, fig.height= 3, fig.width= 5, results='asis'}
+require(knitr)
+height <- matrix(nrow = 40, ncol = 2)
+h <- vector()
+for( i in 1:40 ) {
+    h[i] <- 100 + (200 * i)  - (5 * i^2);
+    height[i,2] <- h[i]
+    height[i,1] <- i
+}
+height_df <- as.data.frame(height)
+colnames(height_df) <- c("i","height")
+```
+
+```{r}
+height_df[1:5,]
+```
+---
+
+### The Modeling Problem
+
+As long as the missle ascends the linear model is adequate, but when gravity (represented by (5 * _i_^2) in the model overcomes the 200 ft. per second accention, the missle begins to fall.
+
+```{r}
+height_df[19:21,]
+```
+At this point the linear model is worthless, and in the case of the soldier standing at point 40,0 on the plot: fatal.
+
+This model was taken from _How Not To Be Wrong: The Power of Mathamatical Thinking_ by Jordan Ellenberg.
+
+--- 
+### The Code
+
+```{r, show_code, ref.label= "the_code" }
+```
