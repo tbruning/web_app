@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>How Linear Models Can Kill You</title>
+  <title>How Linear Models Can Kill</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -26,7 +26,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'How Linear Models Can Kill You',
+                title: 'How Linear Models Can Kill',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -93,7 +93,8 @@
           </hgroup>
   </slide>
 
-<slide class=''><hgroup><h2>The Problem</h2></hgroup><article  id="the-problem">
+<slide class=''><hgroup><h2><span style="color:darkblue">
+The Problem</span></h2></hgroup><article  id="the-problem">
 
 <p>Whenever you look at linear models it is important to try to understand the underlying event behavior, not just the visible manifestation from time <em>0</em> to <em>now</em>.</p>
 
@@ -101,7 +102,10 @@
 
 <p>The following slides numerically show the behavior of the model. The graphical model is available <a href='https://tgbruning.shinyapps.io/web_app' title=''>here</a>.</p>
 
-</article></slide><slide class=''><hgroup><h2>The Model</h2></hgroup><article  id="the-model">
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article >
+
+<h3><span style="color:darkblue">
+The Model</span></h3>
 
 <p>The formula used to compute the trajetory is:<br/>Height(<em>i</em>) = 100 ft + (200 ft * <em>i</em>) - (5 * <em>i</em>^2), where <em>i</em> = seconds since launch.</p>
 
@@ -116,7 +120,8 @@
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article >
 
-<h3>The Modeling Problem</h3>
+<h3><span style="color:darkblue">
+The Modeling Problem</span></h3>
 
 <p>As long as the missle ascends the linear model is adequate, but when gravity (represented by (5 * <em>i</em>^2) in the model overcomes the 200 ft. per second accention, the missle begins to fall.</p>
 
@@ -127,13 +132,15 @@
 ## 20 20   2100
 ## 21 21   2095</pre>
 
-<p>At this point the linear model is worthless, and in the case of the soldier standing at point 40,0 on the plot: fatal.</p>
+<p>At this point the linear model is worthless, and in the case of the soldier standing at point 40,0 on the plot: <span style="color:red; font-weight:bold">
+fatal</span>.</p>
 
 <p>This model was taken from <em>How Not To Be Wrong: The Power of Mathamatical Thinking</em> by Jordan Ellenberg.</p>
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article >
 
-<h3>The Code</h3>
+<h3><span style="color:darkblue">
+The Code</span></h3>
 
 <pre class = 'prettyprint lang-r'>require(knitr)
 height &lt;- matrix(nrow = 40, ncol = 2)
@@ -146,7 +153,7 @@ for( i in 1:40 ) {
 height_df &lt;- as.data.frame(height)
 colnames(height_df) &lt;- c(&quot;i&quot;,&quot;height&quot;)</pre>
 
-<p>This code, and all the code for this project is available on <a href='https://github.com/tbruning/web_app' title=''>github</a>.</p></article></slide>
+<p>This code, and all the code for this project is available on <a href='https://tgbruning.shinyapps.io/web_app' title=''>github</a>.</p></article></slide>
 
 
   <slide class="backdrop"></slide>

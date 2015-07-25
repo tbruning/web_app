@@ -1,11 +1,11 @@
 ---
-title: "How Linear Models Can Kill You"
+title: "How Linear Models Can Kill"
 author: "Tom Bruning"
 date: "July 24, 2015"
 output: ioslides_presentation
 ---
 
-## The Problem
+## <span style="color:darkblue">The Problem</span>
 
 Whenever you look at linear models it is important to try to understand the underlying event behavior, not just the visible manifestation from time _0_ to _now_. 
 
@@ -13,7 +13,9 @@ The problem I have modeled is the trajectory of a missle from launch to the numb
 
 The following slides numerically show the behavior of the model.  The graphical model is available  [here](https://tgbruning.shinyapps.io/web_app).
 
-## The Model
+---
+
+### <span style="color:darkblue">The Model</span>
 
 The formula used to compute the trajetory is:   
 Height(_i_) =  100 ft + (200 ft * _i_)  - (5 * _i_^2), where _i_ = seconds since launch.
@@ -36,21 +38,21 @@ height_df[1:5,]
 ```
 ---
 
-### The Modeling Problem
+### <span style="color:darkblue">The Modeling Problem</span>
 
 As long as the missle ascends the linear model is adequate, but when gravity (represented by (5 * _i_^2) in the model overcomes the 200 ft. per second accention, the missle begins to fall.
 
 ```{r}
 height_df[19:21,]
 ```
-At this point the linear model is worthless, and in the case of the soldier standing at point 40,0 on the plot: fatal.
+At this point the linear model is worthless, and in the case of the soldier standing at point 40,0 on the plot: <span style="color:red; font-weight:bold">fatal</span>.
 
 This model was taken from _How Not To Be Wrong: The Power of Mathamatical Thinking_ by Jordan Ellenberg.
 
----   
+---
 
-### The Code
+### <span style="color:darkblue">The Code</span>
 
 ```{r, show_code, ref.label= "the_code" }
 ```
-This code, and all the code for this project is available on [github](https://github.com/tbruning/web_app).
+This code, and all the code for this project is available on [github](https://tgbruning.shinyapps.io/web_app).
